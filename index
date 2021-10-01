@@ -1,0 +1,391 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Jamboo Simulator</title>
+
+<link rel= "stylesheet" type="text/css" href="dressup.css">
+
+ <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script>
+<!--<script src="dressup.js"></script>-->
+
+</head>
+
+<style>
+
+body{
+  background-color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  padding-left: 25%;
+}
+
+
+
+img {
+  position: absolute;
+  margin-top: 16px;
+  margin-left: 50px;
+  display:inline-block;
+  max-height: 600px;
+
+}
+
+
+button{
+  margin-top:7px;
+  width: 120px;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+  background-color:#ededed;
+  border-radius:20px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  cursor:pointer;
+  color:#777777;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
+}
+
+button:hover {
+  background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+  background-color:#dfdfdf;
+}
+
+ul{
+  list-style-type: none;
+  display:inline-block;
+}
+
+
+placeholder{
+z-index: -1000;   
+}
+
+.tribe{
+  visibility:hidden;
+  z-index: 2;
+  }
+
+.special{
+  visibility:hidden;
+  z-index: 3;
+}
+
+.breed{
+  visibility:hidden;
+  z-index: 4;
+}
+
+.outfit{
+  visibility:hidden;
+  z-index: 5;
+}
+
+.mouth{
+  visibility:hidden;
+  z-index: 6;
+}
+
+.eyebrows{
+  visibility:hidden;
+  z-index: 7;
+}
+
+.eyes{
+  visibility:hidden;
+  z-index: 8;
+}
+
+.head{
+  visibility:hidden;
+  z-index: 9;
+}
+
+.toy{
+  visibility:hidden;
+  z-index: 10;
+}
+
+.pfp{
+  visibility:hidden;
+  z-index: 11;
+}
+
+</style>
+
+<body>
+
+<ul>
+
+  <li><button class="btn btn-default" id="breed_button" type="button">Breed</button></li>
+
+  <li><button class="btn btn-default" id="eyes_button" type="button">Eyes</button></li>
+
+  <li><button class="btn btn-default" id="eyebrows_button" type="button">Eyebrows</button></li>
+
+  <li><button class="btn btn-default" id="mouth_button" type="button">Mouth</button></li>
+
+  <li><button class="btn btn-default" id="head_button" type="button">Head</button></li>
+
+  <li><button class="btn btn-default" id="outfit_button" type="button">Outfit</button></li>
+
+  <li><button class="btn btn-default" id="toy_button" type="button">Toy</button></li>
+
+  <li><button class="btn btn-default" id="tribe_button" type="button">Tribe</button></li>
+
+  <li><button class="btn btn-default" id="special_button" type="button">Special</button></li>
+
+  <li><button class="btn btn-default" id="pfp_button" type="pfp">PFP/Full</button></li>
+
+
+</li>
+</ul>
+
+  <img id="placeholder" src="startpic.png" />
+
+
+<!-- TRIBE -->
+  <img id="tribe4" class="tribe" src="1Tribe/Bonbon.png" />
+
+  <img id="tribe1" class="tribe" src="1Tribe/Voodoo.png" />
+
+  <img id="tribe2" class="tribe" src="1Tribe/Agua.png" />
+
+  <img id="tribe3" class="tribe" src="1Tribe/Starlight V2.png" />
+
+
+<!-- SPECIAL -->
+  <img id="special2" class="special" src="2Special/None.png" />
+
+  <img id="special1" class="special" src="2Special/Hungry.png" />
+
+
+<!-- BREED -->
+  <img id="breed6" class="breed" src="3Breed/Divine.png" />
+
+  <img id="breed1" class="breed" src="3Breed/Classic.png" />
+
+  <img id="breed2"  class="breed" src="3Breed/Adorable.png" />
+
+  <img id="breed3" class="breed" src="3Breed/Alpha.png" />
+
+  <img id="breed4" class="breed" src="3Breed/Wavey.png" />
+
+  <img id="breed5" class="breed" src="3Breed/Savage.png" />
+
+
+<!-- MOUTH -->
+  <img id="mouth10" class="mouth" src="5Mouth/Victorious.png" />
+
+  <img id="mouth1" class="mouth" src="5Mouth/Classic.png" />
+
+  <img id="mouth2" class="mouth" src="5Mouth/Happy.png" />
+
+  <img id="mouth3" class="mouth" src="5Mouth/Blep.png" />
+
+  <img id="mouth4" class="mouth" src="5Mouth/Toothy.png" />
+
+  <img id="mouth5" class="mouth" src="5Mouth/Big Grin.png" />
+
+  <img id="mouth6" class="mouth" src="5Mouth/Nauseous.png" />
+
+  <img id="mouth7"  class="mouth" src="5Mouth/Refined.png" />
+
+  <img id="mouth8" class="mouth" src="5Mouth/Gold Rush.png" />
+
+  <img id="mouth9" class="mouth" src="5Mouth/Gem-Eater.png" />
+
+
+  <!-- EYEBROWS -->
+
+  <img id="eyebrows1" class="eyebrows" src="6Eyebrows/None.png" />
+
+  <img id="eyebrows2"  class="eyebrows" src="6Eyebrows/FUD.png" />
+
+  <img id="eyebrows3" class="eyebrows" src="6Eyebrows/Mad.png" />
+
+
+<!-- EYES -->
+  <img id="eyes12" class="eyes" src="7Eyes/Thug Life.png" />
+
+  <img id="eyes1" class="eyes" src="7Eyes/Classic.png" />
+
+  <img id="eyes2" class="eyes" src="7Eyes/Sky.png" />
+
+  <img id="eyes3"  class="eyes" src="7Eyes/Royal.png" />
+
+  <img id="eyes4" class="eyes" src="7Eyes/Blood.png" />
+
+  <img id="eyes5" class="eyes" src="7Eyes/Hunter.png" />
+
+  <img id="eyes6" class="eyes" src="7Eyes/Suss.png" />
+
+  <img id="eyes7" class="eyes" src="7Eyes/Crybaby.png" />
+
+  <img id="eyes8" class="eyes" src="7Eyes/Degen.png" />
+
+  <img id="eyes9" class="eyes" src="7Eyes/Monocle.png" />
+
+  <img id="eyes10" class="eyes" src="7Eyes/Berzerk.png" />
+
+  <img id="eyes11" class="eyes" src="7Eyes/Magical.png" />
+
+<!-- OUTFIT -->
+
+  <img id="outfit1"  class="outfit" src="4Outfit/None.png" />
+
+  <img id="outfit2" class="outfit" src="4Outfit/Gear Belts.png" />
+
+  <img id="outfit3" class="outfit" src="4Outfit/Spiked Collar.png" />
+
+  <img id="outfit4" class="outfit" src="4Outfit/Hard Floaties.png" />
+
+  <img id="outfit5" class="outfit" src="4Outfit/Box Armor.png" />
+
+  <img id="outfit6" class="outfit" src="4Outfit/Gold Chain.png" />
+
+  <img id="outfit7" class="outfit" src="4Outfit/Celestial Coat.png" />
+
+  <img id="outfit8" class="outfit" src="4Outfit/Mechasuit.png" />
+
+
+  <!-- HEAD -->
+  <img id="head12" class="head" src="8Head/Mechahelm.png" />
+
+  <img id="head1" class="head" src="8Head/Classic.png" />
+
+  <img id="head2"  class="head" src="8Head/Black.png" />
+
+  <img id="head3" class="head" src="8Head/Pink.png" />
+
+  <img id="head4" class="head" src="8Head/Alpha.png" />
+
+  <img id="head5" class="head" src="8Head/Narwhal.png" />
+
+  <img id="head6" class="head" src="8Head/Pineapple.png" />
+
+  <img id="head7" class="head" src="8Head/Roadrunner.png" />
+
+  <img id="head8" class="head" src="8Head/Oracle.png" />
+
+  <img id="head9" class="head" src="8Head/Jambread.png" />
+
+  <img id="head10" class="head" src="8Head/Golden Doodoo.png" />
+
+  <img id="head11" class="head" src="8Head/Celestial Head.png" />
+
+<!-- TOYS -->
+  <img id="toy12" class="toy" src="9Toy/Mechaxe.png" />
+
+  <img id="toy1" class="toy" src="9Toy/Heckcoin.png" />
+
+  <img id="toy2" class="toy" src="9Toy/Butter Knife.png" />
+
+  <img id="toy3"  class="toy" src="9Toy/Bone.png" />
+
+  <img id="toy4" class="toy" src="9Toy/Expensive Rock.png" />
+
+  <img id="toy5" class="toy" src="9Toy/Foosh.png" />
+
+  <img id="toy6" class="toy" src="9Toy/Cactus.png" />
+
+  <img id="toy7" class="toy" src="9Toy/Jambunny.png" />
+
+  <img id="toy8" class="toy" src="9Toy/Durian.png" />
+
+  <img id="toy9" class="toy" src="9Toy/Mischief Stick.png" />
+
+  <img id="toy10" class="toy" src="9Toy/Poptart.png" />
+
+  <img id="toy11" class="toy" src="9Toy/Chiken.png" />
+
+  <!-- PFP -->
+  <img id="pfp2" class="pfp" src="4Outfit/None.png" />
+
+  <img id="pfp1" class="pfp" src="pfp_cover.png" />
+
+
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+function ImageSwitcher(choices, i) {
+  i = 0;
+  
+  this.Next = function() {
+    hide_current_image();
+    show_next_image();
+    placeholder.style.visibility = "hidden";
+  }
+  
+  var hide_current_image = function() {
+    if(choices){
+      choices[i].style.visibility = "hidden";
+      i += 1;
+    }
+  }
+  var show_next_image = function() {
+    if(choices){
+      if(i == (choices.length)) {
+        i = 0;
+      }
+      choices[i].style.visibility = "visible";
+    }
+  }
+}
+  
+    var tribe = $(".tribe");
+  var special = $(".special");
+  var breed = $(".breed");
+  var mouth = $(".mouth");
+  var eyebrows = $(".eyebrows");
+  var eyes = $(".eyes");
+  var outfit = $(".outfit");
+  var head = $(".head");
+  var toy = $(".toy");
+  var pfp = $(".pfp");
+
+  var tribe_picker = new ImageSwitcher(tribe);
+  document.getElementById("tribe_button").onclick = function() { tribe_picker.Next(); };
+  
+  var special_picker = new ImageSwitcher(special);
+  document.getElementById("special_button").onclick = function() {special_picker.Next(); };
+  
+  var breed_picker = new ImageSwitcher(breed);
+  document.getElementById("breed_button").onclick = function() {breed_picker.Next(); };
+
+  var mouth_picker = new ImageSwitcher(mouth);
+  document.getElementById("mouth_button").onclick = function() {mouth_picker.Next(); };
+
+  var eyebrows_picker = new ImageSwitcher(eyebrows);
+  document.getElementById("eyebrows_button").onclick = function() {eyebrows_picker.Next(); };
+
+  var eyes_picker = new ImageSwitcher(eyes);
+  document.getElementById("eyes_button").onclick = function() {eyes_picker.Next(); };
+
+  var outfit_picker = new ImageSwitcher(outfit);
+  document.getElementById("outfit_button").onclick = function() {outfit_picker.Next(); };
+
+  var head_picker = new ImageSwitcher(head);
+  document.getElementById("head_button").onclick = function() {head_picker.Next(); };
+
+  var toy_picker = new ImageSwitcher(toy);
+  document.getElementById("toy_button").onclick = function() {toy_picker.Next(); };
+
+  var pfp_picker = new ImageSwitcher(pfp);
+  document.getElementById("pfp_button").onclick = function() {pfp_picker.Next(); };
+
+});
+
+  $("#tribe_button").click(function(){
+  $("#tribe-menu").css("visibility", "visible"); });
+</script>
